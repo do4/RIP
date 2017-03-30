@@ -1,17 +1,87 @@
 <html><head>
-  <title>RIP</title>
+  <title>Example Form</title>
   <style>
-    body { font-family: arial }
     .hidden { display: none }
   </style>
-</head><body>
-  <center>
-  <br />
-  <h2>RIP</h2>
-  <form name="contact" netlify netlify-honeypot="bot-field">
-    <p><label>Email: <input name="email"></label></p>
-    <p class="hidden"><label>Bot field: <input name="bot-field"></label></p>
-    <p><label>Message: <textarea name="message"></textarea></label></p>
-    <p><button>Send</button></p>
-  </form>
+  <link rel=stylesheet type=text/css href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css />
+  <link rel=stylesheet type=text/css href=https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css />
+</head><body class="content">
+  <div class="container">
+    <div class="box">
+      <h1>Example Form</h1>
+      <form id="contact_form" name="contact" netlify netlify-honeypot="bot-field">
+
+        <div class="field">
+          <label class="label">Name</label>
+          <p class="control has-icon has-icon-right">
+            <input id="name" class="input" name="name" type="text" placeholder="Name">
+            <span class="icon is-small">
+              <i class="fa fa-user"></i>
+            </span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <p class="control has-icon has-icon-right">
+            <input class="input" id="email" name="email" type="text" placeholder="Email">
+            <span class="icon is-small">
+              <i class="fa fa-envelope-o"></i>
+            </span>
+            <span class=hidden><label>Bot field: <input name="bot-field"></span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label class="label">Subject</label>
+          <p class="control">
+            <span class="select">
+              <select name="title" id="title" class="input">
+                <option value="">Please select...</option>
+                <option value="Thank You">Thank you / Word of Encouragement</option>
+                <option value="Interview Request">Interview Request</option>
+                <option value="Speaking Request">Speaking Request</option>
+                <option value="Salvation/Discipleship Question">Question about Salvation or Discipleship</option>
+                <option value="Podcast Question">Questions for / about the Podcast</option>
+                <option value="Book/Resource Recommend">Book or Resource Recommendation</option>
+                <option value="Looking For Something">Looking for Something on your Website</option>
+                <option value="Bible Question">Bible-Theology question</option>
+                <option value="Donate">How do I donate to your ministry</option>
+                <option value="Other Question">Other questions</option>
+              </select>
+            </span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label class="label">Message</label>
+          <p class="control">
+            <textarea id="message" name="message" class="textarea" placeholder="Message"></textarea>
+          </p>
+        </div>
+
+        <p><button class="button is-info is-large">
+          Send &nbsp;
+          <span class="icon">
+            <i class="fa fa-paper-plane-o"></i>
+          </span>
+        </button></p>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/g/jquery@3.2.1(jquery.slim.min.js),jquery.validation@1.16.0(jquery.validate.min.js+additional-methods.min.js)"></script>
+  <script>
+  $("#contact_form").validate({
+    errorClass: "is-danger",
+    validClass: "is-info",
+    rules: {
+      name: "required",
+      title: "required",
+      email: {
+        required: true,
+        email: true
+      }
+    }
+  });
+  </script>
 </body></html>
