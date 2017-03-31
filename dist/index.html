@@ -7,10 +7,9 @@
   <link rel=stylesheet type=text/css href=https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css />
 </head><body class="content">
   <div class="container">
-    <div>
-      <h1>Contact Us</h1>
-      <form id="contact_form" name="contact" netlify netlify-honeypot="bot-field">
-
+    <div class="box">
+      <form class="form" id="contact_form" name="contact" netlify netlify-honeypot="bot-field">
+        <span class="bot_field"><label>Bot field: <input name="bot-field"></span>
         <div class="field">
           <label class="label">Name</label>
           <p class="control has-icon has-icon-right">
@@ -28,7 +27,6 @@
             <span class="icon is-small">
               <i class="fa fa-envelope-o"></i>
             </span>
-            <span class="bot_field"><label>Bot field: <input name="bot-field"></span>
           </p>
         </div>
 
@@ -61,12 +59,12 @@
           </p>
         </div>
 
-        <p><button class="button is-info is-large">
+        <div class="field"><button class="button is-info is-large">
           Send &nbsp;
           <span class="icon">
             <i class="fa fa-paper-plane-o"></i>
           </span>
-        </button></p>
+        </button></div>
       </form>
     </div>
   </div>
